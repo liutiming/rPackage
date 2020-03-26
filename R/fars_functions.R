@@ -5,10 +5,10 @@
 #' @return a dataframe tbl from the csv file
 #'
 #' @details will return error if the no file of specified name exists
-#' @importFrom readr::read_csv,dplyr::tbl_df
+#' import readr::read_csv,dplyr::tbl_df
 #'
-#' @example fars_read("file.txt")
-#'
+#' @example fars_read("data/t.csv")
+#' @export
 
 
 fars_read <- function(filename) {
@@ -25,6 +25,7 @@ fars_read <- function(filename) {
 #' @return a string as a name for bz2 file that takes in year
 #' @details error if year is not a numeric
 #' @example make_filename(2009)
+#' @export
 make_filename <- function(year) {
         year <- as.integer(year)
         sprintf("accident_%d.csv.bz2", year)
@@ -34,8 +35,9 @@ make_filename <- function(year) {
 #' @param years a range of years
 #' @return a dataframe of month and year where the file contains such name exists
 #' @details warning will return if the file of the year does not exist
-#' @importFrom dplyr::mutate, dplyr::select
+#' import dplyr::mutate, dplyr::select
 #' @example fars_read_years(2016)
+#' @export
 fars_read_years <- function(years) {
         lapply(years, function(year) {
                 file <- make_filename(year)
@@ -53,8 +55,9 @@ fars_read_years <- function(years) {
 #' summarize the number of year and month
 #' @param years a range of years
 #' @return return a data frame which contains a column of the number of columns with the same year and month
-#' @importFrom dplyr::bind_rows, dplyr::group_by, dplyr::summarize, tidyr::spread
+#' import dplyr::bind_rows, dplyr::group_by, dplyr::summarize, tidyr::spread
 #' @example fars_summarize_years(2016)
+#' @export
 fars_summarize_years <- function(years) {
         dat_list <- fars_read_years(years)
         dplyr::bind_rows(dat_list) %>%
@@ -67,8 +70,9 @@ fars_summarize_years <- function(years) {
 #' @param state.num the number of a state
 #' @param year a range of years
 #' @return return a graph of the location of the accidents of a particular state in a particular year
-#' @importFrom dplyr::filter,maps::map, graphics::points
+#' import dplyr::filter,maps::map, graphics::points
 #' @example fars_summarize_years(2016)
+#' @export
 fars_map_state <- function(state.num, year) {
         filename <- make_filename(year)
         data <- fars_read(filename)

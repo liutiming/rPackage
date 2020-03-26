@@ -11,6 +11,7 @@ fars_summarize_years(years)
 }
 \value{
 return a data frame which contains a column of the number of columns with the same year and month
+import dplyr::bind_rows, dplyr::group_by, dplyr::summarize, tidyr::spread
 }
 \description{
 summarize the number of year and month

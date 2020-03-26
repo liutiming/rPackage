@@ -13,6 +13,7 @@ fars_map_state(state.num, year)
 }
 \value{
 return a graph of the location of the accidents of a particular state in a particular year
+import dplyr::filter,maps::map, graphics::points
 }
 \description{
 plot the accidents of a particular state in a particular year
