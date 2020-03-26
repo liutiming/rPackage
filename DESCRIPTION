@@ -17,7 +17,6 @@ Imports:
     readr (>= 1.1.1), 
     tidyr (>= 0.8.2.9000),
     tibble (>= 1.4.99.9005),
-    lubridate (>= 1.7.4)
     rmarkdown
 Suggests: 
     testthat (>= 2.1.0)
