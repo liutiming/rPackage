@@ -1,14 +1,25 @@
 Package: rPackage
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Toy
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Timing Liu
+Maintainer: Timing Liu <timingliu@outlook.com>
+Description: This plots accident graph from csv
+License: MIT
 Encoding: UTF-8
 LazyData: true
+Imports: 
+    knitr (>= 1.20),
+    dplyr (>= 0.7.99.9000),
+    mapdata (>= 2.3.0),
+    maps (>= 3.3.0), 
+    magrittr (>= 1.5),
+    readr (>= 1.1.1), 
+    tidyr (>= 0.8.2.9000),
+    tibble (>= 1.4.99.9005),
+    lubridate (>= 1.7.4)
+    rmarkdown
 Suggests: 
     testthat (>= 2.1.0)
+VignetteBuilder: knitr
 RoxygenNote: 7.1.0
