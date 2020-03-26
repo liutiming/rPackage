@@ -7,9 +7,9 @@
 fars_map_state(state.num, year)
 }
 \arguments{
-\item{stat.num}{the number of a state}
+\item{state.num}{the number of a state}
 
-\item{years}{a range of years}
+\item{year}{a range of years}
 }
 \value{
 return a graph of the location of the accidents of a particular state in a particular year
